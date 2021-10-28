@@ -1,27 +1,20 @@
-const number1 = document.getElementById("num1");
-const number2 = document.getElementById("num2");
-const resultsButton = document.getElementById("buttonResults")
-const resultsPTag = document.getElementById("results")
-const clearButton = document.getElementById("buttonClear")
-
-const add = (num1, num2) => {
+var number1 = document.getElementById("num1");
+var number2 = document.getElementById("num2");
+var resultsButton = document.getElementById("buttonResults");
+var resultsPTag = document.getElementById("results");
+var clearButton = document.getElementById("buttonClear");
+var add = function (num1, num2) {
     return num1 + num2;
-}
-
-const clear = () => {
+};
+var clear = function () {
     number1.value = '';
     number2.value = '';
     resultsPTag.innerHTML = "";
-}
-
-resultsButton.addEventListener("click", () => {
-    console.log(add(number1.value, number2.value));
-    resultsPTag.innerHTML = add(number1.value, number2.value);
-})
-
-clearButton.addEventListener("click", () => {
+};
+resultsButton.addEventListener("click", function () {
+    console.log(add(+number1.value, +number2.value));
+    resultsPTag.innerHTML = add(+number1.value, +number2.value);
+});
+clearButton.addEventListener("click", function () {
     number1.value.innerHTML = clear();
-})
-
-
-
+});
